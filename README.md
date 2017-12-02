@@ -11,10 +11,12 @@ Verify that the command `hciconfig dev` outputs a device and that the device is 
 
 ## Install the docker container
 1. Pull the image
-`docker pull grantbey/room:latest`
+
+``docker pull grantbey/room:latest``
 
 2. Start the container
-`docker run -d --name="room" --privileged --net=host -v <local config directory>:/root/room-assistant/config grantbey/room:latest`
+
+``docker run -d --name="room" --privileged --net=host -v <local config directory>:/root/room-assistant/config grantbey/room:latest``
 
 ## Arguments
 `--name="room"`: give the container whichever name you like
