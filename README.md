@@ -10,8 +10,11 @@ Bluetooth must be installed and configured on your host machine.
 Verify that the command `hciconfig dev` outputs a device and that the device is listed as `UP RUNNING`. If the device is down, run `sudo hciconfig hci0 UP`.
 
 ## Install the docker container
-`docker pull grantbey/room`
-`docker run -d --name="room" --privileged --net=host -v <local config directory>:/root/room-assistant/config grantbey/room`
+1. Pull the image
+`docker pull grantbey/room:latest`
+
+2. Start the container
+`docker run -d --name="room" --privileged --net=host -v <local config directory>:/root/room-assistant/config grantbey/room:latest`
 
 ## Arguments
 `--name="room"`: give the container whichever name you like
