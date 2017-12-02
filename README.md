@@ -16,8 +16,9 @@ Verify that the command `hciconfig dev` outputs a device and that the device is 
 
 2. Start the container
 
-``docker run -d --name="room" --privileged --net=host -v <local config directory>:/root/room-assistant/config grantbey/room:latest``
+``docker run -d --name="room" --privileged --restart=always --net=host -v <local config directory>:/root/room-assistant/config grantbey/room:latest``
 
 ## Arguments
 `--name="room"`: give the container whichever name you like
 `-v <local config directory>:/root/room-assistant/config`: this should map to a local directory where your config file resides. You can download the sample config file [here](https://github.com/mKeRix/room-assistant/raw/master/config/default.json). Note that this file _must_ be renamed to `local.json` in order for this to work. See the [source repository](https://github.com/mKeRix/room-assistant) for details on configuration.
+`--restart=always`: ensures that the docker will start automatically. See [here](https://docs.docker.com/engine/admin/start-containers-automatically/#use-a-restart-policy).
