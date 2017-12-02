@@ -26,8 +26,6 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 RUN git clone https://github.com/mKeRix/room-assistant.git \
 	&& cd room-assistant \
 	&& npm install
-	# && npm install -g forever forever-service \
-	# && forever-service install -s index.js -e "ENV=prod" --start room-assistant
 
 WORKDIR /root/room-assistant
 
