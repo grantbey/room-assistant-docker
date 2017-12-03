@@ -8,7 +8,6 @@ WORKDIR /root
 
 RUN apt-get update && apt-get install -y \
 	bluetooth \
-	#bluez \
 	libbluetooth-dev \
 	libudev-dev \
 	libusb-1.0-0-dev \
@@ -32,7 +31,6 @@ RUN mkdir bluez && cd bluez \
 	&& tar xvf bluez-5.47.tar.xz && cd bluez-5.47 \
 	&& ./configure --enable-library \
 	&& make -j8 && make install \
-	# && cp attrib/gatttool /usr/local/bin/ \
 	&& cd .. && rm -rf bluez
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
